@@ -1,0 +1,167 @@
+        <div>
+            <span>Name</span>
+            <input type="text" name="name" id="name" placeholder="Your Beautiful name here..." required>
+        </div>
+        <div>
+            <span>Email</span>
+            <input type="email" name="email" id="name" placeholder="Don't Worry We don't spam" required> 
+        </div>
+        <div> 
+            <span>Service Type</span>
+            <select name="service_type" id="service" required>
+                <option value=""><---Services---></option>
+                <option value="Threading">Threading</option>
+                <option value="Waxing">Waxing</option>
+                <option value="Facial">Facial</option>
+                <option value="Organic_Sugaring">Organic Sugaring</option>
+                <option value="Lash_Extension">Lash Extension</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div> 
+            <span>Sub-Service</span>
+            <select name="sub_service" id="subService" required>
+            </select>
+            <script>
+                const subServices = {
+                    Threading:[
+                    { label: 'Eyebrows', value: 'eyebrows' },
+                    { label: 'Eyebrows (M)', value: 'eyebrowsM' },
+                    { label: 'Upper Lip', value: 'upperLip' },
+                    { label: 'Lower Lip', value: 'lowerLip' },
+                    { label: 'Chin', value: 'chin' },
+                    { label: 'Sides', value: 'sides' },
+                    { label: 'Forehead', value: 'forehead' },
+                    { label: 'Nose', value: 'nose' },
+                    { label: 'Nose (Inside)', value: 'noseInside' },
+                    { label: 'Ears', value: 'ears' },
+                    { label: 'Neck', value: 'neck' },
+                    { label: 'Full Face', value: 'fullFace' },
+                    ],
+                    Waxing:[
+                        { label: 'Full Arm', value: 'fullArm' },
+                        { label: 'Half Arm', value: 'halfArm' },
+                        { label: 'Full Leg', value: 'fullLeg' },
+                        { label: 'Half Leg (Top)', value: 'halfLegTop' },
+                        { label: 'Half Leg (Bottom)', value: 'halfLegBottom' },
+                        { label: 'Under Arm', value: 'underArm' },
+                        { label: 'Bikini Line', value: 'bikiniLine' },
+                        { label: 'Brazilian (All Off)', value: 'brazilian' },
+                        { label: 'Chest', value: 'chest' },
+                        { label: 'Back', value: 'back' },
+                        { label: 'Shoulder', value: 'shoulder' },
+                        { label: 'Full Body', value: 'fullBody' },
+                    ],
+                    Facial:[
+                    { label: 'Gold Facial', value: 'goldFacial' },
+                    { label: 'Express Facial', value: 'expressFacial' },
+                    { label: 'European Facial', value: 'europeanFacial' },
+                    { label: 'Four Layer Facial', value: 'fourLayerFacial' },
+                    { label: 'AK2 (Oily & Acne Skin)', value: 'ak2Facial' },
+                    { label: 'Hydra Science', value: 'hydraScience' },
+                    { label: 'Radiance Facial', value: 'radianceFacial' },
+                    { label: 'Eye Collagen Treatment', value: 'eyeCollagen' },
+                    { label: 'Microdermabrasion', value: 'microdermabrasion' },
+                    { label: 'LED Light (All Skin Types)', value: 'ledLight' },
+                    { label: 'Glycolic Peeling (All Skin Types)', value: 'glycolicPeeling' },
+                    { label: 'Chocolate Facial', value: 'chocolateFacial' },
+                    ],
+                    Organic_Sugaring:[
+                    { label: 'Full Arm', value: 'fullArm' },
+                    { label: 'Half Arm', value: 'halfArm' },
+                    { label: 'Full Leg', value: 'fullLeg' },
+                    { label: 'Half Leg (Top)', value: 'halfLegTop' },
+                    { label: 'Half Leg (Bottom)', value: 'halfLegBottom' },
+                    { label: 'Under Arm', value: 'underArm' },
+                    { label: 'Bikini Line', value: 'bikiniLine' },
+                    { label: 'Brazilian (All Off)', value: 'brazilian' },
+                    { label: 'Chest', value: 'chest' },
+                    { label: 'Back', value: 'back' },
+                    { label: 'Shoulder', value: 'shoulder' },
+                    { label: 'Full Body', value: 'fullBody' },
+                    { label: 'Full Stomach', value: 'fullstomach'},
+                    ],
+                    Lash_Extension:[
+                    { label: 'Eyelash Extension', value: 'eyelashExtension' },
+                    { label: 'Lash Extension', value: 'lashExtension' },
+                    { label: 'Lash Lift', value: 'lashLift' },
+                    { label: 'Henna Brows', value: 'hennaBrows' },
+                    { label: 'Henna Lashes', value: 'hennaLashes' },
+                    { label: 'Henna Tattoo', value: 'hennaTattoo' },
+                    ],
+                    Others:[
+                    { label: 'Ear Candling', value: 'earCandling' },
+                    { label: 'Microneedling', value: 'microneedling' },
+                    { label: 'Microblading', value: 'microblading' },
+                    { label: 'Makeup', value: 'makeup' },
+                    { label: 'Brow Lamination', value: 'browLamination' },
+                    ],
+                };
+                const serviceDropdown = document.getElementById('service');
+                const subServiceDropdown = document.getElementById('subService');
+
+                function updateSubServices() {
+                    // Get the selected service value
+                    const serviceValue = serviceDropdown.value;
+                
+                    // Clear existing sub services options
+                    subServiceDropdown.innerHTML = '';
+                
+                    // Get sub services options for the selected service
+                    const options = subServices[serviceValue];
+                
+                    // Create and append new option elements to the sub service dropdown
+                    options.forEach((option) => {
+                      const newOption = document.createElement('option');
+                      newOption.value = option.value;
+                      newOption.innerText = option.label;
+                      subServiceDropdown.appendChild(newOption);
+                    });
+                  }
+                  serviceDropdown.addEventListener('change', updateSubServices);
+                  updateSubServices();
+                  serviceDropdown = document.getElementById('selectService')
+                    serviceDropdown.addEventListener('change', (event) => {
+                    selected_service = event.target.value
+                    // update subservice dropdown based on selected service
+                    // recalculate and update price and total
+                    })
+                    subserviceDropdown = document.getElementById('selectSubService')
+                    subserviceDropdown.addEventListener('change', (event) => {
+                    selected_subservice = event.target.value
+                    // recalculate and update price and total
+                    })
+            </script>
+        </div>
+        <div> 
+            <span>Time</span>
+            <select name="time" id="service" required>
+                <option value=""><---Time---></option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="1:00">1:00</option>
+                <option value="2:00">2:00</option>
+                <option value="3:00">3:00</option>
+                <option value="4:00">4:00</option>
+                <option value="5:00">5:00</option>
+                <option value="6:00">6:00</option>
+                <option value="7:00">7:00</option>
+                <option value="8:00">8:00</option>
+            </select>
+        </div>
+        {% comment %} <div>
+            <span>What time ?</span>
+            <input type="text" name="time" id="time" placeholder="Time" required>
+        </div> {% endcomment %}
+        <div>
+            <span>What is the date ?</span>
+            <input type="date" name="date" id="date" placeholder="date" required>
+        </div>
+        <div>
+            <span>Your phone number ?</span>
+            <input type="number" name="phone" id="number" placeholder="Write your number here..." required>
+        </div>
+        <div id="submit">
+            <input type="submit" value="SUBMIT" id="submit">
+        </div>

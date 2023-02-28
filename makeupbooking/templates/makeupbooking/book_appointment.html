@@ -1,0 +1,33 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="static/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Spa Zone </title>
+</head>
+
+<body class="main_bg">
+    <p><img src="{% static 'img/9.png' %}" width= 40% ></p>
+    <div class="form">
+        <div class="form-text" ">
+            <h1><span></span>Book Now <span><img src="{% static 'img/art-1.png' %}" alt=""></span></h1>
+            <p>"Welcome to our makeup booking service - where beauty meets convenience!"</p>
+        </div>
+        <div class="main-form">
+            <form method="POST">
+                {% csrf_token %}
+                {% comment %} {{ form.as_p }} {% endcomment %}
+                {% comment %} {{ form.form_snippet}} {% endcomment %}
+                {% include 'makeupbooking/form_snippet.html'  %}
+                {% comment %} <button type="submit">Submit</button> {% endcomment %}
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

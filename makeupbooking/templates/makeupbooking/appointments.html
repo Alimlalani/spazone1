@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Appointments</title>
+  </head>
+  <body>
+    <h2>Appointments</h2>
+    {% if appointments %}
+      <ul>
+        {% for appointment in appointments %}
+          <li>{{ appointment }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You have no appointments.</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Appointments</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center mb-4">View Appointments</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Appointment ID</th>
+					<th>Name</th>
+					<th>Service </th>
+					<th>Additional Service</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Payment</th>
+				</tr>
+			</thead>
+			<tbody>
+                <hr>
+				{% for appointment in MyForm %}
+					<tr>
+						<td>{{ appointment.id }}</td>
+                        <td>{{ appointment.name }}</td>
+						{% comment %} <td>{{ appointment.customer.username }}</td> {% endcomment %}
+						<td>{{ appointment.service_type }}</td>
+						<td>{{ appointment.sub_service }}</td>
+						<td>{{ appointment.date }}</td>
+						<td>{{ appointment.time }}</td>
+						<td>{{ appointment.payment }}</td>
+					</tr>
+				{% endfor %} 
+                {% comment %} <tr>
+                    <td>1</td>
+                    <td>Alim Lalani</td>
+                    <td>Makeup</td>
+                    <td>Face</td>
+                    <td>2-24-2023</td>
+                    <td>1:00</td>
+                    <td>Done</td>
+                </tr> {% endcomment %}
+			</tbody>
+		</table>
+		<a href="{% url 'book_appointment' %}" class="btn btn-primary">Book Appointment</a>
+		<a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
