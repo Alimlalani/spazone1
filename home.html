@@ -1,0 +1,784 @@
+{% comment %} <h1>hello</h1>
+<hr>
+<p>Book an appointment<a href="{% url 'book_appointment' %}">Book </a></p>
+<hr>
+<p>New User? Register<a href="{% url 'register' %}">Register</a></p>
+<hr>
+<p>Login<a href="{% url 'login' %}">Login</a></p>  {% endcomment %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa Zone </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="static/img/logo.png" type="image/x-icon">
+    <!-- icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- estilo css -->
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+
+<body>
+    <header class="l-header" id="header">
+        <div class="navbar container flex">
+            <div class="about__logo">
+                <a href="#" ><img src="static/img/logo.png" alt="Spa Zone" width=100  ></a>
+            </div>
+            <div class="nav" id="nav">
+                <ul class="nav__menu">
+                    <li class="nav__item"><a href="#" class="nav__link active-link">home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About us</a></li>
+                    {% comment %} <li class="nav__item"><a href="#services" class="nav__link">Services</a></li> {% endcomment %}
+                    <li class="nav__item"><a href="#package" class="nav__link">Book An Appointment</a></li>
+                    {% comment %} <li class="nav__item"><a href="#gallery" class="nav__link">Gallery</a></li> {% endcomment %}
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="hero__img">
+                        <img src="static/img/final.png" alt="">
+                    </div>
+                    <div class="hero__content">
+                        <h1>Your<br><span>Big day in style</span></h1>
+                        <p>Discover your beauty within, visit our store today and let our experts enhance your natural radiance!.</p>
+                        <a href"{% url 'book_appointment' %} " onclick = "myFun()" class="btn btn__outline"><i class='bx bxl-whatsapp' ></i>Book an Appointment</a>
+                        <script>
+                            function myFun(){
+                                window.location.href = "{% url 'book_appointment' %}";
+
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="section__title">
+                        <h1>Our History</h1>
+                        <span></span>
+                    </div>
+                    <div class="about__detail">
+                        <div class="about__detail__content">
+                            <div class="about__img">
+                                <img src="static/img/2.jpg" alt="">
+                            </div>
+                            <div class="about__descripion">
+                                <p>Our store has been providing exceptional beauty services for over a decade. Our skilled and experienced staff have mastered the art of threading, facial treatments, waxing, lash extensions and organic sugaring, providing our clients with the best possible results.</p>
+                                <p>We take pride in using only the finest quality products and techniques to achieve the desired look for each and every client.</p>
+                                <p>We strive to create a relaxing and welcoming atmosphere where our clients can unwind and leave feeling refreshed and rejuvenated. At our store, we are committed to exceeding our clients' expectations and making their beauty experience truly exceptional.
+                                    <h1> Come and experience the difference for yourself!</h1></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% comment %} <section class="services section" id="services">
+            <div class="services__content">
+                <div class="row">
+                    <div class="section__title">
+                        <h1>Services</h1>
+                        <span>With Love and Perfection.</span>
+                    </div>
+                </div>
+                <div class="services__content__descripion grid container">
+                    <div class="box">
+                        <div class="inner">
+                            <img src="static/img/2.jpg" alt="">
+                            <p>Facial</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="inner">
+                            <img src="static/img/waxing.jpg" alt="">
+                            <p>Waxing</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="inner">
+                            <img src="static/img/3.jpg" alt="">
+                            <p>Threading</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="inner">
+                            <img src="static/img/lash.jpg" alt="">
+                            <p>Lash Extension</p>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="box">
+                        <div class="inner">
+                            <img src="assests/img/servicos/5.jpg" alt="">
+                            <p>corte de cabelo</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="inner">
+                            <img src="assests/img/servicos/1.jpg" alt="">
+                            <p>design de sobrancelha</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="inner">
+                            <img src="static/img/servicos/2.jpg" alt="">
+                            <p>depiliação com cera</p>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="box">
+                        <div class="inner">
+                            <img src="assests/img/servicos/2.jpg" alt="">
+                            <p>limpeza de pele</p>
+                        </div>
+                    </div> {% endcomment %}
+                {% comment %} </div>
+            </div> {% endcomment %}
+        {% comment %} </section> {% endcomment %}
+        <section class="package section" id="package">
+            <div class="package_-content">
+                <div class="row">
+                    <div class="section__title">
+                        <h1>Our Services</h1>
+                        <span>For perfect you.</span>
+                    </div>
+                </div>
+                <div class="package__cards row container">
+                    <div class="card">
+                        <div class="card__title">
+                            <h1>Threading</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Eyebrows</p><p>----- 8$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Eyebrows (M)</p><p>----- 8$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Upper Lip ---- 6$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Lower Lip ---- 3$<span></span></p>
+                            </div>
+                            {% comment %} <div class="item">
+                                <i class='bx bx-message-square-x x__icon' ></i>
+                                <p class="not">Lowe Lip ---- 3$<span></span></p>
+                            </div> {% endcomment %}
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Chin ---- 5$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Sides ---- 10$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Forehead ---- 6$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Nose ---- 6$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Nose (Inside) ---- 10$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Ears ---- 10$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Neck ---- 8$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full face ---- 35$<span></span></p>
+                            </div>
+                            <button class="btn" onclick = "myFun()">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__title">
+                            <h1>Facial</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Gold Facial ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Express Facial ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>European Facial ---- 75$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Four Layer Facial ----85$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>AK2 (Oily &Acne Skin) ---- 85$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Hydra Science ---- 110$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Rediance ---- 95$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Eye Collagen ---- 30$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Microdemabrasion ---- 100$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>LED Light (All skin types) ---- 35$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Glycolic peeling (All skin types) ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Chocolate Facial  ---- 35$</p>
+                            </div>
+                            <button class="btn" onclick = "myFun()">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__title">
+                            <h1>Waxing</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full Arm ---- 30$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Half Arm ---- 25$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full leg ---- 45$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Half leg (top) ---- 33$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Half leg (bottom) ---- 28$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Under Arm ---- 15$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Bikini line  ---- 18$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Brazilian (All off) ---- 45$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Chest ---- 40$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Back ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Shoulder ---- 22$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full body ---- 160$</p>
+                            </div>
+                            <button class="btn" onclick = "myFun()">Book Now</button>
+                        </div>
+                    </div>
+
+                    {% comment %} <div class="card">
+                        <div class="card__title">
+                            <h1>Diamante</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Penteado</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Maquiagem</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Unhas<span>(tradicional francesa)</span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Depilação<span>(1 area)</span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Design de sobrancelha</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Limpeza de pele</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Sala de noiva reservada</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Mesa de frutas</p>
+                            </div>
+                            <button class="btn">quero esse</button>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <section class="package section" id="package">
+            <div class="package_-content">
+                <div class="row">
+                    <div class="section__title">
+                        <h1>Other Services </h1>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="package__cards row container">
+                    <div class="card">
+                        <div class="card__title">
+                            <h1>Lash Extension</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Eyelash Extension </p><p>----- 25$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Lash Extension </p><p>----- 45/50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Lash Lift ---- 85$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Henna Brows ---- 15/25$<span></span></p>
+                            </div>
+                            {% comment %} <div class="item">
+                                <i class='bx bx-message-square-x x__icon' ></i>
+                                <p class="not">Lowe Lip ---- 3$<span></span></p>
+                            </div> {% endcomment %}
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Henna Lashes ---- 20$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Henna Tattoo ---- 10$<span></span></p>
+                            </div>
+                            {% comment %} <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Forehead ---- 6$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Nose ---- 6$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Nose (Inside) ---- 10$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Ears ---- 10$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Neck ---- 8$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full face ---- 35$<span></span></p>
+                            </div> {% endcomment %}
+                            <button class="btn" onclick = "myFun()">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__title">
+                            <h1>Organic Sugaring</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full Arm ---- 55$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Half Arm ---- 25$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full Leg ---- 80$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Half Leg (top) ----45$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Half Lef (bottom) ---- 35$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Under Arm ---- 15$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Bikini Line ---- 25$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Brazilian (All off) ---- 50/55$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Buti Cheeks ---- 20$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Chest ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Back ---- 60$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Shoulder  ---- 25$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full Body  ---- 250$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full Stomach  ---- 35$</p>
+                            </div>
+                            <button class="btn" onclick = "myFun()">Book Now</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__title">
+                            <h1>Others</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Ear Candling ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Microneedling---- 200$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Microblading ---- 400$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Makeup ---- 50$<span></span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Brow Lamination ---- 75$</p>
+                            </div>
+                            {% comment %} <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p> ---- 15$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Bikini line  ---- 18$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Brazilian (All off) ---- 45$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Chest ---- 40$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Back ---- 50$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Shoulder ---- 22$</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Full body ---- 160$</p>
+                            </div> {% endcomment %}
+                            <button class="btn" onclick = "myFun()">Book Now</button>
+                        </div>
+                    </div>
+
+                    {% comment %} <div class="card">
+                        <div class="card__title">
+                            <h1>Diamante</h1>
+                        </div>
+                        <div class="card__items">
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Penteado</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Maquiagem</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Unhas<span>(tradicional francesa)</span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Depilação<span>(1 area)</span></p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Design de sobrancelha</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Limpeza de pele</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Sala de noiva reservada</p>
+                            </div>
+                            <div class="item">
+                                <i class='bx bx-message-square-check check__icon' ></i>
+                                <p>Mesa de frutas</p>
+                            </div>
+                            <button class="btn">quero esse</button>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% comment %} <section class="gallery section" id="gallery">
+            <div class="gallery__content">
+                <div class="row">
+                    <div class="section__title">
+                        <h1>Galeria</h1>
+                        <span>As princesas do nosso instragram</span>
+                    </div>
+                </div>
+                <div class="gallery__list__img row container">
+                    <div class="gallery__img">
+                        <img src="static/img/1.jpg" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="static/img/2.jpg" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="assests/img/img-insta/foto3.png" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="assests/img/img-insta/foto4.png" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="assests/img/img-insta/foto5.png" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="assests/img/img-insta/foto6.png" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="assests/img/img-insta/foto7.png" alt="">
+                    </div>
+                    <div class="gallery__img">
+                        <img src="assests/img/img-insta/foto8.png" alt="">
+                    </div>
+                </div>
+                <button class="btn">ver mais</button>
+            </div>
+        </section> {% endcomment %}
+        <section class="testimonials section">
+            <div class="testimonials__content">
+                <div class="row">
+                    <div class="section__title">
+                        <h1>Testimonials</h1>
+                        <span>See what our customers have to say</span>
+                    </div>
+                </div>
+                <div class="testimonials__card container grid">
+                    <div class="testimonials__item flex">
+                        <div class="testimonials__img">
+                            <img src="static/img/1.jpg" alt="">
+                        </div>
+                        <div class="testimonials__box">
+                            <div class="testimonials__name">
+                                <h1>Celaena</h1>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                            </div>
+                            <div class="testimonials__descripition">
+                                <p>"I recently visited this business for a facial and I was blown away by the results. My skin has never looked better! The esthetician was friendly and knowledgeable and made me feel comfortable throughout the entire process. I will definitely be returning for future services."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials__item flex">
+                        <div class="testimonials__img">
+                            <img src="static/img/2.jpg" alt="">
+                        </div>
+                        <div class="testimonials__box">
+                            <div class="testimonials__name">
+                                <h1>Aelin</h1>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                            </div>
+                            <div class="testimonials__descripition">
+                                <p>I have been a regular customer of this business for the past 2 years and I am absolutely thrilled with the services they provide. The staff is knowledgeable, friendly and skilled at what they do. I highly recommend this business for anyone looking for professional skin care services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials__item flex">
+                        <div class="testimonials__img">
+                            <img src="static/img/3.jpg" alt="">
+                        </div>
+                        <div class="testimonials__box">
+                            <div class="testimonials__name">
+                                <h1>Luciana</h1>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                            </div>
+                            <div class="testimonials__descripition">
+                                <p>"I have been getting my eyebrows threaded at this business for the past 5 years and I wouldn't trust anyone else to do it. The staff is always professional and the results are always perfect. I highly recommend this business to anyone looking for threading services."
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials__item flex">
+                        <div class="testimonials__img">
+                            <img src="static/img/4.jpg" alt="">
+                        </div>
+                        <div class="testimonials__box">
+                            <div class="testimonials__name">
+                                <h1>Patricia</h1>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                                <i class='bx bxs-star star__icon' ></i>
+                            </div>
+                            <div class="testimonials__descripition">
+                                <p>"I have been a loyal customer of this business for the past 8 years and I have never been disappointed with the services they provide. Whether it's threading, facial, waxing or sugaring, the staff is always professional and the results are always amazing. I highly recommend this business to anyone looking for quality skin care services."
+
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="contact">
+        <div class="footer__list section container grid">
+            <div class="footer__data">
+                <h1><a href="#"><img src="assests/img/logo.svg" alt=""></a></h1>
+                <div class="footer__data-social">
+                    <a href=""><i class='bx bxl-facebook social__icon'></i></a>
+                    <a href=""><i class='bx bxl-instagram social__icon' ></i></a>
+                    <a href=""><i class='bx bxl-whatsapp social__icon' ></i></a>
+                </div>
+            </div>
+            <div class="footer__data">
+                <h2>Our Address</h2>
+                <p>41-26 Crescent St, Queens, <br> NY 11101, United States</p>
+            </div>
+            <div class="footer__data">
+                <h2>Our Schedule</h2>
+                <p>Monday to Sunday <br>10:00 to 8:00</p>
+            </div>
+            <div class="footer__data">
+                <h2>Contact</h2>
+                <p>+1 718-673-8364</p>
+                <p>+1 516-309-0817</p>
+            </div>
+        </div>
+        <div class="copy">
+            <p>&copy All Rights Reserved</p>
+            <span>Made with  🤎 By Alim Lalani </span>
+            <br>
+            {% comment %} <hr> {% endcomment %}
+            <span>alimlalani1234@gmail.com</span>
+            <br>
+            <span>+91 9284448123 </span>
+        </div>
+    </footer>
+    <!-- javascript -->
+    <script src="assests/js/style.js"></script>
+</body>
+
+</html>
