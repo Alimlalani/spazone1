@@ -780,7 +780,15 @@ a{
         text-align: center;
     }
 }
-
+@media only screen and (max-width: 770px){
+	.main_bg{
+		flex-direction: column;
+        text-align: center;
+	}
+	body{
+		overflow-x: hidden;
+	}
+}
 /* Made by Alim Lalani */
 
 
